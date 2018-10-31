@@ -142,3 +142,4 @@ integrator Newmark 0.5 0.25
 analysis Transient
 analyze 3000 0.005
 puts 123
+print  -ele 
