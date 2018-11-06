@@ -5,16 +5,16 @@ model BasicBuilder -ndm 3 -ndf 6
 # node 111 第1层第1榀框架1节点
 node 111 0.000e+0 0.000e+0 0.000e+0
 node 112 2.720e+3 0.000e+0 0.000e+0
-node 121 0.000e+0 -2.720e+3 0.000e+0
-node 122 2.720e+3 -2.720e+3 0.000e+0
+node 121 0.000e+0 2.720e+3 0.000e+0
+node 122 2.720e+3 2.720e+3 0.000e+0
 node 211 0.000e+0 0.000e+0 3.300e+3
 node 212 2.720e+3 0.000e+0 3.300e+3
-node 221 0.000e+0 -2.720e+3 3.300e+3
-node 222 2.720e+3 -2.720e+3 3.300e+3
+node 221 0.000e+0 2.720e+3 3.300e+3
+node 222 2.720e+3 2.720e+3 3.300e+3
 node 311 0.000e+0 0.000e+0 6.600e+3
 node 312 2.720e+3 0.000e+0 6.600e+3
-node 321 0.000e+0 -2.720e+3 6.600e+3
-node 322 2.720e+3 -2.720e+3 6.600e+3
+node 321 0.000e+0 2.720e+3 6.600e+3
+node 322 2.720e+3 2.720e+3 6.600e+3
 # restraint
 fix 111 1 1 1 1 1 1
 fix 112 1 1 1 1 1 1 
@@ -71,7 +71,7 @@ set GirdTra 2
 set ColTra 3
 geomTransf Linear $BeamTra 0 0 1
 geomTransf Linear $GirdTra 0 0 1
-geomTransf PDelta $ColTra 0 1 0 
+geomTransf PDelta $ColTra 0 -1 0 
 # element 211 单元类型编号+第1层第1个
 element nonlinearBeamColumn 111 211 221 5 $BeamSec $BeamTra -mass 186
 element nonlinearBeamColumn 112 212 222 5 $BeamSec $BeamTra -mass 186
