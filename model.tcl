@@ -71,7 +71,7 @@ set GirdTra 2
 set ColTra 3
 geomTransf Linear $BeamTra 0 0 1
 geomTransf Linear $GirdTra 0 0 1
-geomTransf PDelta $ColTra 0 -1 0 
+geomTransf PDelta $ColTra 0 1 0 
 # element 211 单元类型编号+第1层第1个
 element nonlinearBeamColumn 111 211 221 5 $BeamSec $BeamTra -mass 186
 element nonlinearBeamColumn 112 212 222 5 $BeamSec $BeamTra -mass 186
@@ -142,4 +142,3 @@ algorithm Newton
 integrator Newmark 0.5 0.25 
 analysis Transient
 analyze 3000 0.005
-print AccelSeries
