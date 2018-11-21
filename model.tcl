@@ -77,8 +77,8 @@ element nonlinearBeamColumn 111 211 221 5 $BeamSec $BeamTra -mass 186
 element nonlinearBeamColumn 112 212 222 5 $BeamSec $BeamTra -mass 186
 element nonlinearBeamColumn 121 311 321 5 $BeamSec $BeamTra -mass 186
 element nonlinearBeamColumn 122 312 322 5 $BeamSec $BeamTra -mass 186
-element nonlinearBeamColumn 211 211 312 5 $BeamSec $GirdTra -mass 186
-element nonlinearBeamColumn 212 221 322 5 $BeamSec $GirdTra -mass 186
+element nonlinearBeamColumn 211 211 212 5 $BeamSec $GirdTra -mass 186
+element nonlinearBeamColumn 212 221 222 5 $BeamSec $GirdTra -mass 186
 element nonlinearBeamColumn 221 311 312 5 $BeamSec $GirdTra -mass 186
 element nonlinearBeamColumn 222 321 322 5 $BeamSec $GirdTra -mass 186
 element nonlinearBeamColumn 311 111 211 5 $ColSec $ColTra -mass 367.5
@@ -91,6 +91,7 @@ element nonlinearBeamColumn 323 221 321 5 $ColSec $ColTra -mass 367.5
 element nonlinearBeamColumn 324 222 322 5 $ColSec $ColTra -mass 367.5
 # recorlder
 recorder Node -file node311.out -time -node 311 -dof 1 2 3 disp 
+recorder Node -file node.out -time -node 211 -dof 1 2 3 disp
 # gravity
 pattern Plain 1 Linear {
     eleLoad -ele 111 112 121 122 211 212 221 222 -type -beamUniform 0.000 -1000000
@@ -141,5 +142,4 @@ algorithm Newton
 integrator Newmark 0.5 0.25 
 analysis Transient
 analyze 3000 0.005
-puts 123
-print  -ele 
+print AccelSeries
